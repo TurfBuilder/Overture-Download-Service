@@ -1,0 +1,10 @@
+overture-downloader
+overture-dowloader
+bin
+docs
+Dockerfile
+.dockerignore
+.git
+.env
+.claude
+run-dev.sh

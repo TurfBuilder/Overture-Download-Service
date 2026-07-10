@@ -1,0 +1,10 @@
+# Compiled binaries
+/overture-downloader
+/overture-dowloader
+/bin/
+
+# Editor/OS noise
+.DS_Store
+
+# Vars
+.env
