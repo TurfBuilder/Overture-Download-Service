@@ -1,6 +1,8 @@
 # Build stage
-# Debian-based image: go-duckdb needs CGO and links cleanest against glibc
-FROM golang:1.25 AS builder
+# Debian-based image: go-duckdb needs CGO and links cleanest against glibc.
+# Pinned to bookworm so the binary links against the same glibc generation
+# as the distroless cc-debian12 runtime stage below.
+FROM golang:1.25-bookworm AS builder
 
 WORKDIR /app
 
