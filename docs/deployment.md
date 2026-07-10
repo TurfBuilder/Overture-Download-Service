@@ -29,7 +29,6 @@ Set these under **Settings → Secrets and variables → Actions**:
 | Secret | Contents |
 |---|---|
 | `KUBE_CONFIG` | Base64-encoded kubeconfig for the cluster (`base64 < kubeconfig` on macOS, `base64 -w0 < kubeconfig` on Linux). Use a service account scoped to the `turfbuilder` namespace if possible. |
-| `GHCR_PULL_TOKEN` | A GitHub PAT with `read:packages`, used to create the in-cluster image pull secret. (The workflow's own `GITHUB_TOKEN` expires when the run ends, so it can't serve as a pull credential.) |
 | `S3_ENDPOINT` | Spaces/S3 endpoint hostname, e.g. `nyc3.digitaloceanspaces.com`. |
 | `S3_BUCKET` | Bucket that receives result files. |
 | `S3_ACCESS_KEY` | Spaces access key. |

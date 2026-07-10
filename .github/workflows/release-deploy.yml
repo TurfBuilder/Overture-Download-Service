@@ -85,22 +85,12 @@ jobs:
 
       - name: Sync namespace and secrets to the cluster
         env:
-          GHCR_PULL_TOKEN: ${{ secrets.GHCR_PULL_TOKEN }}
           S3_ENDPOINT: ${{ secrets.S3_ENDPOINT }}
           S3_BUCKET: ${{ secrets.S3_BUCKET }}
           S3_ACCESS_KEY: ${{ secrets.S3_ACCESS_KEY }}
           S3_SECRET_KEY: ${{ secrets.S3_SECRET_KEY }}
         run: |
           kubectl create namespace "$NAMESPACE" \
-            --dry-run=client -o yaml | kubectl apply -f -
-
-          # Pull secret for the (private) GHCR package. GHCR_PULL_TOKEN is a
-          # PAT with read:packages — GITHUB_TOKEN can't be used because it
-          # expires when this workflow ends.
-          kubectl create secret docker-registry ghcr-pull -n "$NAMESPACE" \
-            --docker-server=ghcr.io \
-            --docker-username="${{ github.actor }}" \
-            --docker-password="$GHCR_PULL_TOKEN" \
             --dry-run=client -o yaml | kubectl apply -f -
 
           kubectl create secret generic overture-downloader-s3 -n "$NAMESPACE" \

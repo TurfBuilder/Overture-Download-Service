@@ -15,8 +15,6 @@ spec:
       labels:
         app: overture-downloader
     spec:
-      imagePullSecrets:
-        - name: ghcr-pull
       containers:
         - name: overture-downloader
           # The CI workflow replaces the tag with the release version on deploy.
