@@ -11,3 +11,4 @@ REST API.
 - [Getting Started](getting-started.md) — prerequisites, running locally, Docker
 - [Configuration](configuration.md) — command-line flags and environment variables
 - [Usage](usage.md) — sending requests, job lifecycle, checking status
+- [Deployment](deployment.md) — CI/CD releases, versioning, Kubernetes setup

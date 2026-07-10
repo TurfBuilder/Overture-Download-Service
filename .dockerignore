@@ -8,3 +8,6 @@ Dockerfile
 .env
 .claude
 run-dev.sh
+.github
+.k8s
+test-request.json
